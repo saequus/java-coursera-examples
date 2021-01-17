@@ -15,7 +15,7 @@ class StackOfStrings {
 	}
 
 	public void print() {
-		System.out.println(this.data.toString());
+		System.out.println("Current stack state: " + this.data.toString());
 	}
 
 	public String pop() {	
@@ -25,6 +25,10 @@ class StackOfStrings {
 		}
 		return "";	
 	}
+
+	public boolean isEmpty() {
+		return this.data.size() == 0;
+	}
 }
 
 
@@ -32,6 +36,7 @@ class Main {
 	public static void main(String[] args) {
 		StackOfStrings st = new StackOfStrings();
 
+		System.out.println("Is stack empty?: " + st.isEmpty());
 		st.push("banana");
 		st.push("orange");
 		st.push("pear");
@@ -39,6 +44,7 @@ class Main {
 		st.print();
 		String popedItem = st.pop();
 		System.out.println("Poped item: " + popedItem);
-		st.print();	
+		st.print();
+		System.out.println("Is stack empty?: " + st.isEmpty());
 	}
 }
